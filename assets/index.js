@@ -1,24 +1,29 @@
-const tabButtons = document.querySelector('.tab-btns')
+const buttons = document.querySelectorAll('.tab-btn');
+const tabs = document.querySelectorAll('.tab');
 
-tabButtons.addEventListener('click', e => {
-  const button = e.target.closest('.tab-btn')
-  if (!button) return
+// Hide all tabs except the first one
+for (let i = 1; i < tabs.length; i++) {
+  tabs[i].style.display = 'none';
+}
 
-  const tabName = button.dataset.tab
-  const tab = document.getElementById(tabName)
-  if (!tab) return
+buttons.forEach(button => {
+  button.addEventListener('click', () => {
+    // Remove active class from all buttons
+    buttons.forEach(btn => btn.classList.remove('active'));
 
-  const activeButton = document.querySelector('.tab-btn.active')
-  if (activeButton) {
-    activeButton.classList.remove('active')
-  }
-  button.classList.add('active')
+    // Add active class to clicked button
+    button.classList.add('active');
 
-  const activeTab = document.querySelector('.tab.active')
-  if (activeTab) {
-    activeTab.classList.remove('active')
-    activeTab.style.display = 'none'
-  }
-  tab.classList.add('active')
-  tab.style.display = 'block'
-})
+    // Hide all tabs except the one with the matching data-tab attribute
+    tabs.forEach(tab => {
+      if (tab.id === button.dataset.tab) {
+        tab.style.display = 'block';
+      } else {
+        tab.style.display = 'none';
+      }
+    });
+  });
+});
+
+// Add active class to the first button
+buttons[0].classList.add('active');
