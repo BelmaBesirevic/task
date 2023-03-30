@@ -1,3 +1,79 @@
-h1 {
-  color: crimson;
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+}
+
+main {
+  height: inherit;
+  width: inherit;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tabs {
+  position: relative;
+  max-width: 100%;
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 0 auto;
+}
+
+.tab {
+  width: 100%;
+  flex: 1;
+}
+
+.tab input[type='radio'] {
+  display: none;
+}
+
+.tab label {
+  display: block;
+  padding: 10px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.tab input[type='radio']:checked + label {
+  background-color: #fff;
+  border-bottom: 1px solid black;
+}
+
+.tab .content {
+  display: none;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-top: none;
+  position: absolute;
+  left: 0;
+  top: 100%;
+}
+
+.tab input[type='radio']:checked + label + .content {
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 100%;
 }
