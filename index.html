@@ -33,41 +33,37 @@
     <!-- End Google Tag Manager (noscript) -->
     <main>
       <div class="wrapper">
-        <div class="tabs">
-          <div class="tab">
-            <input type="radio" id="tab1" name="tab-group" checked />
-            <label for="tab1" class="tab-label">Step 1</label>
-            <div class="content">
-              <p>This is step 1 content.</p>
-            </div>
-          </div>
+        <div class="tab-btns">
+          <button class="tab-btn active" onclick="openTab('tab1', this)">
+            Tab 1
+          </button>
+          <button class="tab-btn" onclick="openTab('tab2', this)">Tab 2</button>
+          <button class="tab-btn" onclick="openTab('tab3', this)">Tab 3</button>
+          <button class="tab-btn" onclick="openTab('tab4', this)">Tab 4</button>
+        </div>
 
-          <div class="tab">
-            <input type="radio" id="tab2" name="tab-group" />
-            <label for="tab2" class="tab-label">Step 2</label>
-            <div class="content">
-              <p>This is step 2 content.</p>
-            </div>
-          </div>
+        <div id="tab1" class="tab active">
+          <h2>London</h2>
+          <p>London is the capital of England.</p>
+        </div>
 
-          <div class="tab">
-            <input type="radio" id="tab3" name="tab-group" />
-            <label for="tab3" class="tab-label">Step 3</label>
-            <div class="content">
-              <p>This is step 3 content.</p>
-            </div>
-          </div>
+        <div id="tab2" class="tab" style="display: none">
+          <h2>Paris</h2>
+          <p>Paris is the capital of France.</p>
+        </div>
 
-          <div class="tab">
-            <input type="radio" id="tab4" name="tab-group" />
-            <label for="tab4" class="tab-label">Step 4</label>
-            <div class="content">
-              <p>This is step 4 content.</p>
-            </div>
-          </div>
+        <div id="tab3" class="tab" style="display: none">
+          <h2>Tokyo</h2>
+          <p>Tokyo is the capital of Japan.</p>
+        </div>
+
+        <div id="tab4" class="tab" style="display: none">
+          <h2>Sarajevo</h2>
+          <p>Sarajevo is the capital of Bosnia.</p>
         </div>
       </div>
     </main>
+
     <script src="./assets/index.js"></script>
   </body>
 </html>
