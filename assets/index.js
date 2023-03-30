@@ -1,15 +1,24 @@
-function openTab(tabName, button) {
-  const tabs = document.querySelectorAll('.tab')
-  for (var i = 0; i < tabs.length; i++) {
-    tabs[i].style.display = 'none'
+const tabButtons = document.querySelector('.tab-btns')
+
+tabButtons.addEventListener('click', e => {
+  const button = e.target.closest('.tab-btn')
+  if (!button) return
+
+  const tabName = button.dataset.tab
+  const tab = document.getElementById(tabName)
+  if (!tab) return
+
+  const activeButton = document.querySelector('.tab-btn.active')
+  if (activeButton) {
+    activeButton.classList.remove('active')
   }
-
-  const buttons = document.getElementsByClassName('tab-btn')
-  for (var i = 0; i < buttons.length; i++) {
-    buttons[i].classList.remove('active')
-  }
-
-  document.getElementById(tabName).style.display = 'block'
-
   button.classList.add('active')
-}
+
+  const activeTab = document.querySelector('.tab.active')
+  if (activeTab) {
+    activeTab.classList.remove('active')
+    activeTab.style.display = 'none'
+  }
+  tab.classList.add('active')
+  tab.style.display = 'block'
+})
