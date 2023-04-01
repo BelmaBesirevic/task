@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <!-- Google Tag Manager -->
     <script>
       ;(function (w, d, s, l, i) {
@@ -33,7 +32,35 @@
     ></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <div class="bg-pattern"></div>
-    <main>
+    <div class="cookie-banner">
+      <div class="cookie-banner__content">
+        <p>
+          We use cookies to personalize content and ads, to provide social media
+          features and to analyze our traffic. We also share information about
+          your use of our site with our social media, advertising and analytics
+          partners. You can change your preferences and withdraw your consent at
+          any time.
+        </p>
+        <div class="cookie-banner__controls">
+          <div class="cookie-banner__toggle">
+            <input type="checkbox" id="analytics-toggle" checked />
+            <label for="analytics-toggle">Analytical cookies</label>
+          </div>
+          <div class="cookie-banner__toggle">
+            <input type="checkbox" id="marketing-toggle" checked />
+            <label for="marketing-toggle">Marketing cookies</label>
+          </div>
+          <button class="cookie-banner__button" id="cookie-banner-hide">
+            Hide
+          </button>
+          <button class="cookie-banner__button" id="cookie-banner-accept">
+            Accept
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- <main>
       <div class="wrapper">
         <div class="tab-btns">
           <button class="tab-btn" data-tab="about">About</button>
@@ -91,7 +118,7 @@
           </p>
         </div>
       </div>
-    </main>
+    </main> -->
 
     <script src="./assets/index.js"></script>
   </body>
