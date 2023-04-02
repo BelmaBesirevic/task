@@ -3,20 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script type="text/javascript" charset="UTF-8" src="//cdn.cookie-script.com/s/6070dc0393aa28ae469d9ecded2b459d.js"></script>
     <script>
-      window.dataLayer = window.dataLayer || []
+      window.dataLayer = window.dataLayer || [];
       function gtag() {
-        window.dataLayer.push(arguments)
+    dataLayer.push(arguments);
       }
-      gtag('consent', 'default', {
-        ad_storage: 'denied',
-        analytics_storage: 'denied',
-        wait_for_update: 500,
-      })
-
-      
-    </script>
+      gtag("consent", "default", {
+          ad_storage: "denied",
+          analytics_storage: "denied",
+          wait_for_update: 500
+      });
+      gtag("set", "ads_data_redaction", true);
+  </script>
     <!-- Google Tag Manager -->
     <script>
       ;(function (w, d, s, l, i) {
